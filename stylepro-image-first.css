@@ -1,0 +1,18 @@
+/* Phone first screen: the full outfit image clears the fixed navigation.
+   svh accounts for browser chrome; copy and valuation continue below it. */
+@media(max-width:767px){
+ body.style-pro #stylepro-today{padding-top:10px}
+ body.style-pro #stylepro-today>.sp-page-heading{gap:8px;margin:0 0 10px;align-items:center}
+ body.style-pro #stylepro-today>.sp-page-heading h2{font-size:24px;line-height:1.1;margin:4px 0;max-width:none}
+ body.style-pro #stylepro-today>.sp-page-heading .sp-kicker{margin:0 0 5px;max-width:200px;font-size:8px!important;line-height:1.35}
+ body.style-pro #stylepro-today .sp-hero-art{
+  height:clamp(120px,calc(100svh - 250px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px)),360px)
+ }
+ body.style-pro #stylepro-today .sp-hero-art .sp-carousel-portrait>span{height:36px;font-size:29px}
+ body.style-pro #stylepro-today .sp-hero-art .sp-carousel-portrait>img{top:36px;height:calc(100% - 36px);width:100%;left:0;object-fit:contain}
+ body.style-pro #stylepro-today>.vc-curation{margin-top:24px}
+}
+@media(max-width:360px){
+ body.style-pro #stylepro-today>.sp-page-heading h2{font-size:21px}
+ body.style-pro #stylepro-today>.sp-page-heading .sp-kicker{max-width:170px}
+}

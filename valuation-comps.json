@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "method": "Manually researched public listing snapshots; not an automated Google Grounding feed",
+  "items": {
+    "001": {
+      "checkedAt": "2026-11-15",
+      "note": "Research candidates, not exact matches. The ThredUp page is a brand/category comparison; cut and condition are not confirmed. The Poshmark listing matches brand, color and flare shape but is corduroy and new with tags; your material, condition and size are not confirmed. Prices are asking prices, not completed sales. Neither price has been assigned to your item.",
+      "listings": [
+        {
+          "title": "ThredUp \u00b7 Free People jeans \u00b7 size 31 (estimated)",
+          "url": "https://www.thredup.com/women/free-people/jeans",
+          "priceCents": 3399
+        },
+        {
+          "title": "Poshmark \u00b7 Free People burgundy corduroy flare \u00b7 W27 \u00b7 new with tags",
+          "url": "https://poshmark.com/listing/Free-People-Burgundy-Corduroy-Flare-Jeans-6acc3453a0b935630aebb4dc",
+          "priceCents": 5000,
+          "retailCents": 9800
+        }
+      ]
+    },
+    "087": {
+      "checkedAt": "2026-11-15",
+      "note": "Broad brand/category research only. These cotton pullovers are not verified matches for your navy sheer textured knit. Category-page asking-price snapshots are shown; individual pages later redirected to sold-item pages without a final sale price. No sold price, original MSRP, exact-match value or availability is established. Excluded from your closet total.",
+      "listings": [
+        {
+          "title": "ThredUp \u00b7 Theory pullover \u00b7 size S \u00b7 category snapshot",
+          "url": "https://www.thredup.com/premium/theory/sweaters",
+          "priceCents": 5399
+        },
+        {
+          "title": "ThredUp \u00b7 Theory pullover \u00b7 size L \u00b7 category snapshot",
+          "url": "https://www.thredup.com/premium/theory/sweaters",
+          "priceCents": 5099
+        }
+      ]
+    },
+    "187": {
+      "checkedAt": "2026-11-15",
+      "note": "Broad Coach signature shoulder-bag research, not an exact match. Your tassel bag model, size and condition remain unverified. This ThredUp category snapshot shows F19682 at $306.99; its detail page did not expose a current price when checked. Asking price only, not a sold price or authentication. Not assigned to your bag or included in your total.",
+      "listings": [
+        {
+          "title": "ThredUp \u00b7 Coach F19682 black signature shoulder bag \u00b7 category snapshot",
+          "url": "https://www.thredup.com/handbags/coach/shoulder-bags?brand_name_tags=Coach+-+all+brands&context=srp&department_tags=handbags&listing_type=cmp,p2p&page=3&skip_fallback=true&style_tags=shoulder",
+          "priceCents": 30699
+        }
+      ]
+    },
+    "200": {
+      "checkedAt": "2026-11-15",
+      "note": "Related Adidas Samba models, not verified Samba Doe matches. The tan pair is a knit slip-on in size 9; the black/pink pair has inconsistent size details. Neither matches your spotted Doe colorway. Condition and size of your pair are unrecorded. Detail-page asking prices exclude shipping and are not completed sale values. No price is assigned to your shoes.",
+      "listings": [
+        {
+          "title": "ThredUp \u00b7 Adidas Samba tan knit \u00b7 size 9 \u00b7 very good",
+          "url": "https://www.thredup.com/product/women-adidas-tan-sneakers/1502443939",
+          "priceCents": 7399
+        },
+        {
+          "title": "ThredUp \u00b7 Adidas Samba black/pink \u00b7 excellent \u00b7 size needs checking",
+          "url": "https://www.thredup.com/product/women-adidas-black-sneakers/1502210114",
+          "priceCents": 7499
+        }
+      ]
+    }
+  }
+}

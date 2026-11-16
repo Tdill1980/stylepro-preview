@@ -1,0 +1,274 @@
+{
+  "version": 1,
+  "checkedAt": "2026-11-15",
+  "provider": "Manual web research snapshot; automatic Google Grounding not connected",
+  "items": {
+    "075": {
+      "checkedAt": "2026-11-15",
+      "note": "Related black Calvin Klein silhouettes. Your model, size and condition need confirmation. Closed listing prices are displayed prices, not verified transaction amounts. Range is provisional.",
+      "listings": [
+        {
+          "title": "Poshmark · black 90s loose jeans · W28 · closed listing",
+          "url": "https://poshmark.com/listing/Calvin-Klein-black-denim-90s-Loose-Fit-Jean-28-NWOT-6a430815ef1ef7486c03b582",
+          "priceCents": 5500,
+          "brand": "Calvin Klein",
+          "category": "Bottoms",
+          "priceKind": "closed-listing",
+          "eligible": true,
+          "currency": "USD",
+          "checkedAt": "2026-11-15",
+          "differences": "NWOT W28; exact wash, size and condition unconfirmed."
+        },
+        {
+          "title": "Poshmark · black 90s straight jeans · W27 · closed listing",
+          "url": "https://poshmark.com/listing/NWT-Calvin-Klein-Womens-90s-Straight-Jeans-67d333e3cf86b1dfd691ad8f",
+          "priceCents": 4500,
+          "brand": "Calvin Klein",
+          "category": "Bottoms",
+          "priceKind": "closed-listing",
+          "eligible": true,
+          "currency": "USD",
+          "checkedAt": "2026-11-15",
+          "differences": "Straight instead of loose; NWT W27. Exact model unconfirmed."
+        }
+      ]
+    },
+    "080": {
+      "checkedAt": "2026-11-15",
+      "note": "Strong visual retail candidate: H&M 1299851002. Confirm the garment label before calling this an exact match. No adequate resale evidence yet; retail is never counted as resale.",
+      "listings": [
+        {
+          "title": "H&M · burgundy interlock V-neck vest · 1299851002",
+          "url": "https://www2.hm.com/en_us/productpage.1299851002.html",
+          "priceCents": 1999,
+          "brand": "H&M",
+          "category": "Tops & vests",
+          "priceKind": "retail",
+          "eligible": true,
+          "currency": "USD",
+          "checkedAt": "2026-11-15",
+          "differences": "SKU, material and size not yet confirmed on your piece."
+        }
+      ]
+    },
+    "187": {
+      "checkedAt": "2026-11-15",
+      "note": "Two black signature-jacquard tassel shoulder-bag asking prices. Model, dimensions, condition and authenticity of your bag are not established by these listings. Conditional resale planning estimate, before fees.",
+      "listings": [
+        {
+          "title": "Poshmark · Coach signature tassel bag · good",
+          "url": "https://poshmark.com/listing/Coach-Black-Signature-Jacquard-Shoulder-Bag-with-Tassel-6a7d094632f934a507acb887",
+          "priceCents": 13000,
+          "brand": "Coach",
+          "category": "Handbags",
+          "priceKind": "asking",
+          "eligible": true,
+          "currency": "USD",
+          "checkedAt": "2026-11-15",
+          "differences": "Adjustable strap; model and dimensions may differ."
+        },
+        {
+          "title": "Poshmark · Coach signature tassel charm bag · good",
+          "url": "https://poshmark.com/listing/Coach-Black-Signature-Jacquard-Shoulder-Bag-with-Tassel-Charm-6a931c6405ce57e7631f6524",
+          "priceCents": 10000,
+          "brand": "Coach",
+          "category": "Handbags",
+          "priceKind": "asking",
+          "eligible": true,
+          "currency": "USD",
+          "checkedAt": "2026-11-15",
+          "differences": "Exterior zip pocket; exact shape and model need comparison."
+        }
+      ]
+    },
+    "200": {
+      "checkedAt": "2026-11-15",
+      "note": "Deer-print Samba candidate KJ7447 matches the recorded colors and pattern. Your size, style label and condition remain unconfirmed. The $80 closed listing does not establish the price paid. Conditional planning estimate.",
+      "listings": [
+        {
+          "title": "Poshmark · Samba OG Deer Print KJ7447 · W7.5 · closed listing",
+          "url": "https://poshmark.com/listing/adidas-Originals-Samba-OG-Deer-Print-Sneakers-Pink-Laces-Size-Womens-75-6ad90fada6e36a474a87b158",
+          "priceCents": 8000,
+          "brand": "Adidas",
+          "category": "Shoes",
+          "priceKind": "closed-listing",
+          "eligible": true,
+          "currency": "USD",
+          "checkedAt": "2026-11-15",
+          "differences": "New/unworn W7.5; your size and condition not recorded."
+        },
+        {
+          "title": "Finish Line · Samba OG Deer Print KJ7447 · retail",
+          "url": "https://www.finishline.com/pdp/womens-adidas-originals-samba-og-leather-casual-shoes/prod2781810/KJ7447/213",
+          "priceCents": 10999,
+          "brand": "Adidas",
+          "category": "Shoes",
+          "priceKind": "retail",
+          "eligible": true,
+          "currency": "USD",
+          "checkedAt": "2026-11-15",
+          "differences": "Confirm style code; current comparable retail, not purchase price."
+        }
+      ]
+    },
+    "117": {
+      "checkedAt": "2026-11-15",
+      "note": "Black enamel, gold-tone H-clasp bangle candidates. Conditional on genuine Hermès and comparable condition. Your width, size, model and authentication are not confirmed. Gold plating is not solid gold; no melt value is inferred.",
+      "listings": [
+        {
+          "title": "FASHIONPHILE · black narrow Clic Clac H GM · very good",
+          "url": "https://www.fashionphile.com/products/hermes-enamel-narrow-clic-clac-h-bracelet-gm-black-1998453",
+          "priceCents": 42500,
+          "brand": "Hermès",
+          "category": "Jewelry",
+          "priceKind": "asking",
+          "eligible": true,
+          "currency": "USD",
+          "checkedAt": "2026-11-15",
+          "differences": "GM narrow; scratches/tarnish; your size and width unknown."
+        },
+        {
+          "title": "FASHIONPHILE · black narrow Clic Clac H T6 · very good",
+          "url": "https://www.fashionphile.com/products/hermes-enamel-narrow-clic-clac-h-bracelet-t6-black-1997745",
+          "priceCents": 45000,
+          "brand": "Hermès",
+          "category": "Jewelry",
+          "priceKind": "asking",
+          "eligible": true,
+          "currency": "USD",
+          "checkedAt": "2026-11-15",
+          "differences": "T6 narrow; scratches; your size and condition unknown."
+        },
+        {
+          "title": "The RealReal · black enamel Clic H · good",
+          "url": "https://www.therealreal.com/products/jewelry/bracelets/bangle/hermes-enamel-clic-h-bangle-bracelet-wzno3",
+          "priceCents": 45900,
+          "brand": "Hermès",
+          "category": "Jewelry",
+          "priceKind": "asking",
+          "eligible": true,
+          "currency": "USD",
+          "checkedAt": "2026-11-15",
+          "differences": "Gold-plated brass, good condition; dimensions need comparison."
+        },
+        {
+          "title": "Hermès · Clic H noir yellow-gold plated · retail",
+          "url": "https://www.hermes.com/us/en/product/clic-h-bracelet-H700001Fv01GM/",
+          "priceCents": 81000,
+          "brand": "Hermès",
+          "category": "Jewelry",
+          "priceKind": "retail",
+          "eligible": true,
+          "currency": "USD",
+          "checkedAt": "2026-11-15",
+          "differences": "GM, 0.47-inch width; exact match unconfirmed."
+        }
+      ]
+    },
+    "116": {
+      "checkedAt": "2026-11-15",
+      "identityConfirmed": false,
+      "note": "Trish identifies her necklace as Chanel Cruise 2024. The RealReal lists a leather CC pendant necklace from that collection with a displayed price and a sold label; final transaction price is unverified. Confirm length and date code before treating this as the same model. The enamel-circle necklace is a different design and excluded.",
+      "listings": [
+        {
+          "title": "The RealReal · Cruise 2024 leather CC pendant necklace · closed listing",
+          "url": "https://www.therealreal.com/products/jewelry/necklaces/chain/chanel-2024-leather-cc-pendant-necklace-u1r20",
+          "priceCents": 77500,
+          "priceKind": "closed-listing",
+          "currency": "USD",
+          "brand": "Chanel",
+          "category": "Jewelry",
+          "eligible": false,
+          "checkedAt": "2026-11-15",
+          "differences": "Candidate only: listed length 32.5–35.5 inches. Your necklace dimensions and code are not recorded."
+        }
+      ]
+    },
+    "114": {
+      "checkedAt": "2026-11-15",
+      "identityConfirmed": false,
+      "note": "Owner identifies London blue topaz, purchased at London Gold. The exact online product listing has not been verified; no resale estimate is assigned. Retail and purchase price are separate from resale.",
+      "listings": []
+    },
+    "041": {
+      "checkedAt": "2026-11-15",
+      "note": "Owner identified as Blue Align crop jacket with gold-tone hardware, size 8 visible. Current Mercari candidates below are not exact matches: one is a two-piece bundle and the other is a different size/model candidate. Neither is assigned to your jacket. ThredUp detail result 1502355483 returned 404 when opened.",
+      "listings": [
+        {
+          "title": "Mercari · navy/gold Define jacket + Align set · new · size 4",
+          "url": "https://www.mercari.com/us/item/m99319044038/",
+          "priceCents": 9600,
+          "brand": "lululemon logo",
+          "category": "Jackets & layers",
+          "priceKind": "asking",
+          "eligible": false,
+          "currency": "USD",
+          "checkedAt": "2026-11-15",
+          "differences": "Bundle includes leggings; cannot use its price for one jacket. Size and exact model differ."
+        },
+        {
+          "title": "Mercari · Define cropped Nulu Crater Blue · new · size 6",
+          "url": "https://www.mercari.com/us/item/m16712332360/",
+          "priceCents": 9500,
+          "brand": "lululemon logo",
+          "category": "Jackets & layers",
+          "priceKind": "asking",
+          "eligible": false,
+          "currency": "USD",
+          "checkedAt": "2026-11-15",
+          "differences": "LW3HJFS CRBU; size 6 versus your visible 8. Exact color, model and gold hardware match not established."
+        }
+      ]
+    },
+    "120": {
+      "checkedAt": "2026-11-15",
+      "identityConfirmed": false,
+      "note": "Provisional family-level comparison for your black quilted Chanel turn-lock bag. Exact size, double-flap construction, leather, year and condition are unconfirmed. Listed dealer prices are not cash offers or verified sale proceeds. The estimate is conditional on comparable model and condition; no authentication is implied.",
+      "listings": [
+        {
+          "title": "The RealReal · vintage black medium double flap · good",
+          "url": "https://www.therealreal.com/products/women/handbags/shoulder-bags/chanel-medium-classic-double-flap-bag-wcpn7",
+          "priceCents": 589000,
+          "brand": "Chanel",
+          "category": "Handbags",
+          "priceKind": "asking",
+          "eligible": true,
+          "currency": "USD",
+          "checkedAt": "2026-11-15",
+          "differences": "1994–1996; 10 inches wide; repainted corners. Your dimensions, year and repairs are unconfirmed."
+        },
+        {
+          "title": "The RealReal · vintage black double flap · closed listing",
+          "url": "https://www.therealreal.com/products/women/handbags/shoulder-bags/chanel-vintage-medium-classic-double-flap-ps6z1",
+          "priceCents": 437000,
+          "brand": "Chanel",
+          "category": "Handbags",
+          "priceKind": "closed-listing",
+          "eligible": true,
+          "currency": "USD",
+          "checkedAt": "2026-11-15",
+          "differences": "1996–1997; 9.25 inches wide; moderate trim wear. Displayed closed-listing price, final transaction amount unverified."
+        }
+      ]
+    },
+    "129": {
+      "checkedAt": "2026-11-15",
+      "identityConfirmed": false,
+      "note": "Provisional Speedy-family comparison for your Louis Vuitton monogram top-handle satchel. Your model, dimensions, year and condition need confirmation. One dealer asking-price comp; not a sold price, payout or authentication.",
+      "listings": [
+        {
+          "title": "FASHIONPHILE · Monogram Speedy 30 · very good",
+          "url": "https://www.fashionphile.com/products/louis-vuitton-monogram-speedy-30-1975321",
+          "priceCents": 98500,
+          "brand": "Louis Vuitton",
+          "category": "Handbags",
+          "priceKind": "asking",
+          "eligible": true,
+          "currency": "USD",
+          "checkedAt": "2026-11-15",
+          "differences": "2007 Speedy 30, 12 inches long. Vachetta patina, liquid marks and musty odor are disclosed on this comp. Your size and wear may differ."
+        }
+      ]
+    }
+  }
+}

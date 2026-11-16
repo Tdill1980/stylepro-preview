@@ -1,0 +1,35 @@
+/* Light dusty rose actions and soft mauve selections. Keep the page white. */
+:root{--sp-action:#d6b0ba;--sp-action-hover:#c99ba8;--sp-action-ink:#352630;--sp-action-border:#b58e9b;--sp-selected:#ece1e8}
+body.style-pro :is(.sp-btn.primary,.button.primary),
+body.style-pro :is(#main,dialog,.header) :is(.sp-btn.primary,.button.primary),
+body.style-pro #main .sc-page .sp-btn.primary,
+body.style-pro #main .sp-mvp-home .sp-btn.primary,
+body.style-pro #main .sp-carousel .sp-hero-footer>.sp-btn.primary{
+ background:var(--sp-action)!important;color:var(--sp-action-ink)!important;border-color:var(--sp-action-border)!important;min-height:48px
+}
+body.style-pro :is(.sp-btn.primary,.button.primary) :is(span,small){color:var(--sp-action-ink)!important}
+body.style-pro :is(.sp-btn,.button):not(.primary){border-color:#cbb4bf!important;min-height:48px}
+body.style-pro :is(.app-tabs,.sp-pills,.sp-inspiration-toolbar,.mode-toggle) button[aria-pressed=true],
+body.style-pro .sp-carousel-dots button[aria-pressed=true]{background:var(--sp-selected)!important;border-color:var(--sp-action-border)!important;color:var(--sp-action-ink)!important}
+body.style-pro .sp-inspire-btn{background:#f3e6eb!important;color:var(--sp-action-ink)!important;border-color:#cbb4bf!important}
+@media(hover:hover){
+ body.style-pro :is(.sp-btn.primary,.button.primary):hover,
+ body.style-pro :is(#main,dialog,.header) :is(.sp-btn.primary,.button.primary):hover,
+ body.style-pro #main .sc-page .sp-btn.primary:hover,
+ body.style-pro #main .sp-mvp-home .sp-btn.primary:hover,
+ body.style-pro #main .sp-carousel .sp-hero-footer>.sp-btn.primary:hover{background:var(--sp-action-hover)!important}
+}
+.vc-title-row{display:flex;align-items:center;gap:4px;min-width:0}
+.vc-title-row h2{min-width:0}
+body.style-pro .vc-info-button{display:grid;place-items:center;flex:0 0 48px;width:48px;height:48px;min-height:48px;padding:0;border:0;border-radius:50%;background:transparent;color:#593d49;cursor:pointer}
+.vc-info-button span{display:grid;place-items:center;width:25px;height:25px;border:1.5px solid #93717f;border-radius:50%;background:#ece1e8;font:600 17px/1 Georgia,serif}
+.vc-info-button:active{background:#ece1e8}
+.sp-mvp-dialog:has(.vc-info-content){width:min(540px,calc(100vw - 24px));border-color:#cbb4bf}
+.vc-info-content .sp-kicker{max-width:calc(100% - 46px)}
+.vc-info-content h2{font-weight:500;margin-top:14px}
+.vc-info-content p{line-height:1.6}
+.vc-info-formula{padding:15px 18px;border-radius:12px;background:#f3e6eb;color:#352630;line-height:1.8;font-size:14px}
+.vc-info-content form{margin:20px 0 0}
+.vc-info-content form .sp-btn{width:100%}
+body.style-pro .sp-mvp-close{width:48px;height:48px;min-height:48px;border-color:#cbb4bf;background:#faf4f7}
+@media(max-width:360px){.vc-title-row h2{font-size:26px}.vc-title-row{gap:0}.vc-info-content p{font-size:13px}.vc-info-content h2{font-size:27px}.vc-info-formula{padding:12px 14px}}
