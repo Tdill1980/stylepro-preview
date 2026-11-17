@@ -70,12 +70,34 @@ function paintCalendar(){
  if(form) form.onsubmit=ev=>{ev.preventDefault(); window.styleProInvestor?.hear?.(new FormData(form).get('words'));};
  host.querySelector('[data-mic]')?.addEventListener('click',()=>window.styleProInvestor?.listen?.(form?.elements.words));
 }
+function tagBlock(row){
+ const tags=row.tags||[];
+ const presets=window.StyleProLookLibrary?.PRESETS||['Boho','Boss Style'];
+ const custom=tags.filter(tag=>!presets.some(preset=>preset.toLowerCase()===String(tag).toLowerCase())).join(', ');
+ return `<div class="sp-tag-editor" data-tag-id="${esc(row.id)}" data-tag-source="${esc(row.source)}">${presets.map(preset=>`<button type="button" data-tag-preset="${esc(preset)}" aria-pressed="${tags.some(tag=>String(tag).toLowerCase()===preset.toLowerCase())}">${esc(preset)}</button>`).join('')}<label class="sp-field">Tags<input data-tag-custom value="${esc(custom)}" maxlength="40" aria-label="Custom tags for ${esc(row.title)}"></label><button type="button" class="sp-btn" data-tag-save>Save tags</button><p class="sp-tag-line">${tags.length?esc(tags.join(' · ')):'Tags can be edited after saving.'}</p></div>`;
+}
+function writeLibrary(rows){localStorage.setItem(LIBRARY, JSON.stringify(rows.slice(0,80)));}
+function saveWardrobe(entry){
+ const Lib=window.StyleProLookLibrary;
+ const rows=readLibrary();
+ const next=Lib?Lib.save(rows,{...entry,source:Lib.SOURCE,at:new Date().toISOString()}):rows;
+ writeLibrary(next);
+ return next[0];
+}
+function editTags(id, source, presets, custom){
+ const Lib=window.StyleProLookLibrary;
+ const rows=readLibrary();
+ const next=Lib.updateTags(rows,id,[...presets],custom);
+ writeLibrary(next);
+ return next.find(row=>row.id===id&&row.source===source);
+}
 function myWardrobe(){
  if(window.styleProInvestor?.onboarded&&!window.styleProInvestor.onboarded()) return '';
  harvestCalendar();
- const rows=readLibrary().map(r=>({key:'lib-'+r.source+'-'+r.id, title:r.title, time:r.source==='style-this'?'Style this':r.source==='curated'?'Curated fit':'Calendar', look:{id:r.id,title:r.title,pieces:r.pieces,type:'assembly'}}));
- if(!rows.length) return '<section class="sp-curated-fits" aria-label="My Wardrobe"><p class="sp-kicker">My Wardrobe</p><h2>My Wardrobe</h2><p class="sp-note">Approved outfits from Style this, curated fits, and the calendar land here.</p></section>';
- return `<section class="sp-curated-fits" aria-label="My Wardrobe"><p class="sp-kicker">My Wardrobe</p><h2>My Wardrobe</h2><div class="sp-fit-list">${rows.map(rowHTML).join('')}</div></section>`;
+ const stored=readLibrary();
+ const rows=stored.map(r=>({key:'lib-'+r.source+'-'+r.id, title:r.title, time:r.source==='barbie-box'?'Barbie box':r.source==='style-this'?'Style this':r.source==='curated'?'Curated fit':'Calendar', look:{id:r.id,title:r.title,pieces:r.pieces,type:'assembly'}, saved:r}));
+ if(!rows.length) return '<section class="sp-curated-fits" aria-label="My Wardrobe"><p class="sp-kicker">My Wardrobe</p><h2>My Wardrobe</h2><p class="sp-note">Approved outfits from Style this, curated fits, the calendar, and Barbie box land here.</p></section>';
+ return `<section class="sp-curated-fits" aria-label="My Wardrobe"><p class="sp-kicker">My Wardrobe</p><h2>My Wardrobe</h2><div class="sp-fit-list">${rows.map(row=>rowHTML(row)+(row.saved.source==='barbie-box'?tagBlock(row.saved):'')).join('')}</div></section>`;
 }
 function curated(){
  if(window.styleProInvestor?.onboarded&&!window.styleProInvestor.onboarded()) return '';
@@ -168,6 +190,19 @@ document.addEventListener('click',ev=>{
  if(hate){rate(hate.dataset.fitRate, 1, true); return;}
  const shareBtn=ev.target.closest('[data-fit-share]');
  if(shareBtn){share(shareBtn.dataset.fitShare);}
+ const preset=ev.target.closest('[data-tag-preset]');
+ if(preset){preset.setAttribute('aria-pressed', preset.getAttribute('aria-pressed')==='true'?'false':'true'); return;}
+ const saveTags=ev.target.closest('[data-tag-save]');
+ if(saveTags){
+  const box=saveTags.closest('[data-tag-id]');
+  const presets=[...box.querySelectorAll('[data-tag-preset][aria-pressed="true"]')].map(button=>button.dataset.tagPreset);
+  const custom=box.querySelector('[data-tag-custom]').value;
+  try{
+   const row=editTags(box.dataset.tagId, box.dataset.tagSource, presets, custom);
+   box.querySelector('.sp-tag-line').textContent=row.tags.length?row.tags.join(' · '):'Tags can be edited after saving.';
+   if(typeof toast==='function') toast('Tags saved.');
+  }catch(err){if(typeof toast==='function') toast(err.message);}
+ }
 });
 document.addEventListener('mouseover',ev=>{
  if(!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
@@ -183,5 +218,5 @@ document.addEventListener('mouseout',ev=>{
  if(row && !openKey && !row.contains(ev.relatedTarget)) row.classList.remove('is-open');
 });
 window.addEventListener('wardrobe-plan-updated',()=>{if(document.body.dataset.spView==='calendar') paintCalendar();});
-window.styleProFits={paintCalendar, curated, myWardrobe, remember};
+window.styleProFits={paintCalendar, curated, myWardrobe, remember, saveWardrobe, editTags, readLibrary};
 })();

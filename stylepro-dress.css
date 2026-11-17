@@ -1,0 +1,22 @@
+#sp-see-dialog{width:min(560px,100%);max-width:100%;max-height:100dvh;margin:auto auto 0;border:0;border-radius:20px 20px 0 0;padding:0;background:#fffdfd;color:#302530;overflow:auto}
+.sp-see-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 12px 0;background:#775a70;color:#fff}
+.sp-see-bar h2{margin:0;font:600 22px/1.2 var(--sp-display,Georgia);color:#fff}
+.sp-see-bar .sp-kicker{color:#f3e3ea}
+.sp-see-bar button{width:48px;height:48px;border:0;background:transparent;color:#fff;font-size:28px;cursor:pointer}
+.sp-see-body{padding:12px 12px 28px}
+.sp-see-measures{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sp-see-measures .sp-field,.sp-box-create .sp-field,#doll-wardrobe-form .sp-field{font-size:16px}
+.sp-see-measures input,#sp-see-file,#doll-remix,#doll-wardrobe-form input{font-size:16px;min-height:48px}
+.sp-see-stage{position:relative;width:100%;max-width:100%;margin:12px 0;aspect-ratio:var(--ratio,3/4);background:repeating-conic-gradient(#f6f0f4 0% 25%, #fff 0% 50%) 50% / 18px 18px;border-radius:16px;overflow:hidden}
+.sp-see-result{display:block;width:100%;height:100%;object-fit:contain}
+.sp-box-create{display:flex;flex-wrap:wrap;gap:8px;align-items:end;width:100%}
+.sp-box-create .sp-btn,#doll-save-wardrobe,#doll-remix-go,#doll-scratch{min-height:48px;min-width:48px}
+.sp-tag-editor{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 16px}
+.sp-tag-editor .sp-field{flex:1;min-width:140px}
+.sp-tag-editor [data-tag-preset]{min-height:48px;min-width:48px;border-radius:12px;border:1px solid #e6dce1;background:#fff;font:600 14px/1.2 var(--sp-font,sans-serif);padding:8px 12px}
+.sp-tag-editor [aria-pressed="true"]{background:#775a70;color:#fff;border-color:#775a70}
+#doll-wardrobe-form{display:grid;gap:8px;margin-top:12px}
+@media(max-width:760px){#doll-studio{padding-bottom:calc(188px + env(safe-area-inset-bottom))}#doll-wardrobe-form,#doll-save-wardrobe{scroll-margin-bottom:180px}}
+#doll-wardrobe-form[hidden]{display:none}
+.sp-quiet-card [data-see-on-me]{min-height:48px;width:100%;margin-top:8px}
+body.style-pro #sp-see-dialog,body.style-pro .sp-see-stage{max-width:100%}

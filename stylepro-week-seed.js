@@ -1,6 +1,7 @@
 /* Trish's real week, Nov 16–22 2026, Phoenix. Spoken into the stylist; venues stay off the outfit card. */
 (function(root){'use strict';
 const F=typeof module!=='undefined'?require('./stylepro-formula-core.js'):root.StyleProFormula;
+const B=typeof module!=='undefined'?require('./stylepro-outfit-builder.js'):root.StyleProOutfitBuilder;
 const START='2026-11-16';
 const SPOKEN='This week, Monday through Sunday. Monday I have numbers review at 8am, educate and the flywheel message at 9, a text to Carley at 11, and writing demo scripts at 1, that one is tentative. Tuesday is Danze Jam at 9:30 at Life Time Happy Valley, then filming DesignPro at 10:30, tentative, a WrapTV work session at noon, tentative, and Toastmasters at 5:15 at Platinum Toastmasters. Wednesday is DesignPro proof day at 9 and a campaign decision at 11. Thursday is the WOTW anchor at 9, a Meta decision at 11, and filming DesignPro day two at 11:30, tentative. Friday is open. Saturday is Pumpkins and Planks at 11 in Mesa. Sunday I stage next week at 4.';
 const RAW=[
@@ -24,25 +25,30 @@ const RAW=[
 function clockLabel(t){if(!t)return '';let [h,m]=t.split(':').map(Number);const ap=h>=12?'PM':'AM';h=h%12||12;return h+':'+String(m).padStart(2,'0')+' '+ap;}
 function when(ev){return ev.start?(clockLabel(ev.start)+(ev.end?'–'+clockLabel(ev.end):'')):'';}
 function events(){return RAW.map((ev,i)=>({...ev,id:'week-'+i,kind:ev.kind||'outfit',tentative:!!ev.tentative,venue:ev.venue||''}));}
+function copyLook(look, source){
+ return {id:look.id,title:look.title,pieces:look.pieces.slice(),description:look.description||'',source,builder:B.BUILDER,type:'assembly'};
+}
 function dress(items,looks){
  const formulas=F.seedFormulas(items||[]);
  const hero=(looks||[]).find(l=>l.id==='131');
+ const prefs={neverKhaki:true,avoidTerms:['khaki','beige mini']};
  let carried=null;
  return events().map(ev=>{
   if(ev.kind==='reminder') return {...ev,outfit:null};
-  if(ev.kind==='suggested'){
-   const outfit=F.composeOutfits(items,{energyId:ev.energyId})[0]||{id:'suggested',title:'Suggested look',pieces:[],source:'composed'};
-   return {...ev,title:'Suggested look',outfit,mode:'suggested'};
-  }
   if(ev.mode==='transition'&&carried) return {...ev,outfit:carried,mode:'transition'};
-  if(ev.date==='2026-11-16'&&ev.energyId==='founder'&&hero){
-   carried={id:hero.id,title:hero.title,pieces:hero.pieces.slice(),source:'portrait'};
+  if(ev.date==='2026-11-16'&&ev.energyId==='founder'&&hero&&ev.kind!=='suggested'){
+   carried=copyLook(hero,'portrait');
    return {...ev,outfit:carried,mode:ev.mode};
   }
+  const built=B.build({items:items||[],looks:looks||[],q:ev.kind==='suggested'?'Everyday':ev.title,date:ev.date,preferences:prefs,limit:1,seed:0,avoidRepeats:false});
+  if(built.looks[0]){
+   carried=copyLook(built.looks[0],'stylepro-outfit-builder');
+   return {...ev,title:ev.kind==='suggested'?'Suggested look':ev.title,outfit:carried,mode:ev.mode};
+  }
   const formula=formulas.find(f=>f.energy_id===ev.energyId)||formulas[0];
-  const applied=F.applyFormula(formula,{items,energyId:ev.energyId,onCamera:!!ev.onCamera});
-  carried=applied.outfit;
-  return {...ev,outfit:applied.outfit,mode:ev.mode};
+  const applied=F.applyFormula(formula,{items,energyId:ev.energyId,onCamera:!!ev.onCamera,taste:{excludedItemIds:['171'],avoidTerms:['khaki']}});
+  carried=copyLook(applied.outfit,'formula');
+  return {...ev,title:ev.kind==='suggested'?'Suggested look':ev.title,outfit:carried,mode:ev.mode};
  });
 }
 function cards(dressed){

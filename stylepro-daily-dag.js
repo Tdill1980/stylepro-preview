@@ -1,6 +1,7 @@
 /* Calendar → real closet → designer rules → daily edit. Pure, offline DAG. */
 (function(root){'use strict';
 const C=typeof module!=='undefined'?require('./stylepro-core.js'):root.StyleProCore;
+const B=typeof module!=='undefined'?require('./stylepro-outfit-builder.js'):root.StyleProOutfitBuilder;
 const K=typeof module!=='undefined'?require('./stylepro-calendar-core.js'):root.StyleProCalendarCore;
 const V=typeof module!=='undefined'?require('./stylepro-valuation-core.js'):root.StyleProValuation;
 const nodes=[
@@ -30,11 +31,11 @@ function run({items,looks,events=[],date,days=3,wears=[],feedback={},values={},q
    return {date:day,events:es,briefs:occasions.map(e=>({event:e,query:K.stylingQuery(e)+(e.kind==='camera'?' '+e.title:'')}))};
   }),
   'designer-brain':(i,o)=>o['occasion-briefs'].map(day=>({...day,edits:day.briefs.map(b=>{
-   const ranked=C.run({items:o['owned-closet'],looks:i.looks,date:day.date,q:b.query,wears:i.wears,feedback:i.feedback,preferences:i.preferences,avoidRepeats:i.avoidRepeats,seed:i.seed,limit:3});
+   const ranked=B.build({items:o['owned-closet'],looks:i.looks,date:day.date,q:b.query,wears:i.wears,feedback:i.feedback,preferences:i.preferences,avoidRepeats:i.avoidRepeats,seed:i.seed,limit:3});
    const assigned=i.looks.find(l=>l.id===b.event.lookId);
-   if(assigned&&C.run({items:o['owned-closet'],looks:[assigned],date:day.date,q:b.query,preferences:i.preferences,avoidRepeats:false}).looks.length){const core=C.history(assigned,o['owned-closet'],i.wears,day.date).core;ranked.looks=[assigned,...ranked.looks.filter(l=>C.history(l,o['owned-closet'],i.wears,day.date).core!==core)].slice(0,3);}
+   if(assigned&&B.build({items:o['owned-closet'],looks:[assigned],date:day.date,q:b.query,preferences:i.preferences,avoidRepeats:false}).looks.length){const core=C.history(assigned,o['owned-closet'],i.wears,day.date).core;ranked.looks=[assigned,...ranked.looks.filter(l=>C.history(l,o['owned-closet'],i.wears,day.date).core!==core)].slice(0,3);}
    return {...b,looks:ranked.looks,reasoning:ranked.trace,gap:ranked.looks.length?null:{reason:b.event.kind==='workout'?'No verified activewear combination in your curated closet yet.':'No eligible curated combination for this occasion yet.'}};
-  }),fallback:day.briefs.length?null:C.run({items:o['owned-closet'],looks:i.looks,date:day.date,q:i.query||'Everyday',wears:i.wears,feedback:i.feedback,preferences:i.preferences,avoidRepeats:i.avoidRepeats,seed:i.seed,limit:3})})),
+  }),fallback:day.briefs.length?null:B.build({items:o['owned-closet'],looks:i.looks,date:day.date,q:i.query||'Everyday',wears:i.wears,feedback:i.feedback,preferences:i.preferences,avoidRepeats:i.avoidRepeats,seed:i.seed,limit:3})})),
   'facts-and-value':(i,o)=>o['designer-brain'].map(day=>({...day,edits:day.edits.map(edit=>({...edit,cards:edit.looks.map(l=>{
    const ids=[...new Set(l.pieces)],known=ids.filter(id=>Number.isSafeInteger(i.values[id]?.amountCents)&&i.values[id].amountCents>=0&&i.values[id].mode==='estimate'&&i.values[id].currency==='USD');
    return {look:l,facts:C.facts(l,o['owned-closet'],i.wears,day.date),value:{amountCents:known.reduce((sum,id)=>sum+i.values[id].amountCents,0),valued:known.length,pending:ids.length-known.length,status:known.length===ids.length?'complete':'partial'}};
