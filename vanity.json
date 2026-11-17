@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "id": "demo-guerlain-rouge",
+      "demo": true,
+      "kind": "makeup",
+      "brand": "Guerlain",
+      "line": "Rouge G",
+      "name": "Guerlain Rouge G lipstick",
+      "shadeName": "Rouge G de Guerlain",
+      "shadeNumber": "214",
+      "finish": "satin",
+      "purchased": "2024-06-15",
+      "place": "Guerlain spa",
+      "city": "Versailles",
+      "country": "France",
+      "priceCents": null,
+      "notes": "Demo record, not a scanned purchase. Bought at the Guerlain spa in Versailles, France, June.",
+      "photo": ""
+    }
+  ]
+}

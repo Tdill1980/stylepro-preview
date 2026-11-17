@@ -2,6 +2,7 @@
 (function(root){
 'use strict';
 const KEY='stylepro-measurements-v1';
+const PROFILE={height:68,bust:33,waist:26,hip:33,weight:125,heightLabel:"5'8\"",heightCm:173};
 function num(value){
  const n=Number(value);
  return Number.isFinite(n)?n:0;
@@ -21,11 +22,31 @@ function normalizeMeasurements(input){
   bust:optional('bust',24,60),
   waist:optional('waist',20,55),
   hip:optional('hip',24,70),
-  inseam:optional('inseam',20,45)
+  inseam:optional('inseam',20,45),
+  weight:optional('weight',70,400)
+ };
+}
+function withProfile(value){
+ const row=value||{};
+ return {
+  height:row.height||PROFILE.height,
+  bust:row.bust||PROFILE.bust,
+  waist:row.waist||PROFILE.waist,
+  hip:row.hip||PROFILE.hip,
+  inseam:row.inseam||0,
+  weight:row.weight||PROFILE.weight
  };
 }
 function readMeasurements(storage){
- try{return normalizeMeasurements(JSON.parse((storage||{}).getItem?.(KEY)||'null'));}catch{return {height:0,bust:0,waist:0,hip:0,inseam:0};}
+ try{
+  const saved=JSON.parse((storage||{}).getItem?.(KEY)||'null');
+  if(saved) return withProfile(normalizeMeasurements(saved));
+ }catch{}
+ return withProfile(PROFILE);
+}
+function seedMeasurements(storage){
+ if(storage.getItem(KEY)) return readMeasurements(storage);
+ return saveMeasurements(PROFILE, storage);
 }
 function saveMeasurements(input, storage){
  const value=normalizeMeasurements(input);
@@ -149,7 +170,7 @@ function dress(input){
  const placements=place(marks, input.measurements, input.garments);
  return {rgba:cut.rgba, width:input.width, height:input.height, removed:cut.removed, alreadyClear:cut.alreadyClear, landmarks:marks, placements, proportionsKept:proportionsKept(placements)};
 }
-const api={KEY, normalizeMeasurements, readMeasurements, saveMeasurements, removeBackground, landmarks, place, dress, proportionsKept};
+const api={KEY, PROFILE, normalizeMeasurements, withProfile, readMeasurements, seedMeasurements, saveMeasurements, removeBackground, landmarks, place, dress, proportionsKept};
 if(typeof module!=='undefined') module.exports=api;
 root.StyleProSeeOnMe=api;
 })(typeof window!=='undefined'?window:globalThis);

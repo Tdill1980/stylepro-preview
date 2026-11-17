@@ -17,6 +17,11 @@
   <meta name="description" content="stylepro · Your personal stylist. Explore Your Wardrobe, play in Barbie box, plan occasion-based looks and remember what you wore.">
   <title>stylepro · Trish’s dressing room</title>
   <link rel="icon" href="assets/stylepro-monogram.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="stylepro">
   <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="edit.css">
 <link rel="stylesheet" href="pinterest.css?v=32">
 <link rel="stylesheet" href="studio.css?v=32">
@@ -100,12 +105,16 @@
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <noscript><p class="noscript">Enable JavaScript to search the wardrobe. You can also <a href="assets/Trish-Wardrobe-Catalog.pdf">download the complete photo catalog</a>.</p></noscript>
   <script src="app.js?v=47" defer></script><script src="archive.js" defer></script><script src="stylepro-calendar-core.js?v=47" defer></script><script src="neural-stylist.js?v=47" defer></script><script src="doll-calendar.js?v=47" defer></script><script src="premium.js?v=33" defer></script><script src="stylepro-core.js?v=49" defer></script>
-<script src="stylepro-outfit-builder.js?v=78" defer></script><script src="stylepro-inspiration.js?v=39" defer></script><script src="stylepro-mvp-core.js?v=46" defer></script><script src="stylepro-valuation-core.js?v=43" defer></script><script src="stylepro-closet-dag.js?v=46" defer></script><script src="stylepro-daily-dag.js?v=49" defer></script><script src="stylepro.js?v=77" defer></script><script src="stylepro-mvp.js?v=51" defer></script>
+<script src="stylepro-outfit-builder.js?v=78" defer></script>
+<script src="stylepro-home-edit.js?v=79" defer></script><script src="stylepro-inspiration.js?v=39" defer></script><script src="stylepro-mvp-core.js?v=46" defer></script><script src="stylepro-valuation-core.js?v=43" defer></script><script src="stylepro-closet-dag.js?v=46" defer></script><script src="stylepro-daily-dag.js?v=49" defer></script><script src="stylepro.js?v=77" defer></script><script src="stylepro-mvp.js?v=51" defer></script>
 <script src="stylepro-capture-core.js?v=41" defer></script><script src="stylepro-capture.js?v=50" defer></script>
 <script src="stylepro-scan-core.js?v=58" defer></script>
 <script src="stylepro-scan.js?v=72" defer></script>
 <script src="stylepro-calendar-import.js?v=49" defer></script><script src="stylepro-curation.js?v=50" defer></script>
-<script src="stylepro-look-actions.js?v=49" defer></script>
+<script src="stylepro-verdict-core.js?v=86" defer></script>
+<script src="stylepro-verdict.js?v=86" defer></script>
+<script src="stylepro-community.js?v=86" defer></script>
+<script src="stylepro-look-actions.js?v=86" defer></script>
 <script src="stylepro-conversation-core.js?v=49" defer></script>
 <script src="stylepro-stylist.js?v=49" defer></script>
 <script src="stylepro-taste-core.js?v=52" defer></script>
@@ -123,7 +132,32 @@
 <script src="stylepro-style-this.js?v=72" defer></script>
 <script src="stylepro-look-library.js?v=78" defer></script>
 <script src="stylepro-see-on-me-core.js?v=78" defer></script>
-<script src="stylepro-see-on-me.js?v=78" defer></script>
+<script src="stylepro-body-scan.js?v=80" defer></script>
+<script src="stylepro-tryon-core.js?v=80" defer></script>
+<script src="stylepro-doll-core.js?v=80" defer></script>
+<script src="stylepro-doll.js?v=80" defer></script>
+<script src="stylepro-phone-core.js?v=81" defer></script>
+<script src="stylepro-phone.js?v=81" defer></script>
+<script src="stylepro-glasses.js?v=81" defer></script>
+<script src="stylepro-worth-core.js?v=82" defer></script>
+<script src="stylepro-worth.js?v=82" defer></script>
+<script src="stylepro-valet.js?v=82" defer></script>
+<script src="stylepro-ask-core.js?v=82" defer></script>
+<script src="stylepro-vanity.js?v=82" defer></script>
+<script src="stylepro-buy-core.js?v=83" defer></script>
+<script src="stylepro-buy.js?v=83" defer></script>
+<script src="stylepro-access-core.js?v=84" defer></script>
+<script src="stylepro-access.js?v=84" defer></script>
+<script src="stylepro-companion-core.js?v=85" defer></script>
+<script src="stylepro-companion.js?v=85" defer></script>
+<script src="stylepro-see-on-me.js?v=80" defer></script>
+<script>
+if('serviceWorker' in navigator){
+ window.addEventListener('load',function(){
+  navigator.serviceWorker.register(new URL('sw.js', document.baseURI).href).catch(function(){});
+ });
+}
+</script>
 <script src="stylepro-fits.js?v=78" defer></script>
 </body>
 </html>
