@@ -130,6 +130,7 @@ function calendarHome(agenda){
   window.StyleProValet?.paint?.(todayRoot);
   window.StyleProCommunity?.mount?.(todayRoot);
   window.StyleProVanity?.mount?.(todayRoot);
+  window.StyleProLaynie?.mount?.(todayRoot);
   $('#sp-avoid').onchange=ev=>{state.avoid=ev.target.checked;persist();renderToday();};
  }
  function empty(result){return `<div class="sp-empty">${result?.context==='unsupported'?'This catalog does not yet have enough verified dress-code or activity details to promise a suitable look for that request.':'No matching fresh combination in this edit yet.'}<br>Try another occasion, clear a filter, or include recent outfits. You can still play with your own pieces in Wardrobe Box.<div class="sp-actions" style="margin-top:14px"><button class="sp-btn" data-sp-nav="doll">Open Wardrobe Box</button></div></div>`;}
